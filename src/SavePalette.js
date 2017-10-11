@@ -1,27 +1,34 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
  
-export class ColorInput extends Component {
+export class SavePalette extends Component {
   constructor(props) {
     super(props);  
     this.state = {value: ''};
     // this.createSquare = this.createSquare.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.createSquare = this.createSquare.bind(this);
+    this.save = this.save.bind(this);
   }
 
   handleChange(event) {
     this.setState({value: event.target.value});
   }
 
-  createSquare(event) {
-    // if (this.state.value.length === 7 && this.state.value[0] === '#' && this.props.squares.length < 9) {
-      let newColor = this.state.value;
+  save(event) {
+    if (this.state.value.length > 0 && this.props.squares.length > 0) {
+      let paletteName = this.state.value;
       let squareArr = this.props.squares;
-      // alert(newColor);
-      squareArr.push(newColor);
-      this.props.update({squares: squareArr});
-    // }
+      // alert(paletteName + " " + squareArr);
+      
+      let toSave = {
+        paletteName: paletteName,
+        squareArr: squareArr
+      };
+
+      // SEND TO DATABASE HERE
+      alert(paletteName + " is saved to the database! :)");
+      this.props.update({squares: []});
+    }
     this.state.value = '';
     event.preventDefault();
   }
@@ -29,9 +36,9 @@ export class ColorInput extends Component {
   render() {
     return (
       <div className="color-input">
-        <form onSubmit={this.createSquare}>
+        <form onSubmit={this.save}>
         <input type="text" value={this.state.value} onChange={this.handleChange} />
-          <input type="submit" value="Submit"/>
+          <input type="submit" value="Save Palette"/>
         </form>
       </div>
     );

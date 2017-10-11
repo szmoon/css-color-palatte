@@ -11,8 +11,14 @@ export class Top extends Component {
   render() {
     return (
       <div id="top">
-        <ColorInput />
-        <ClearPalette />
+        <ColorInput 
+        squares={this.props.squares}
+        update={this.props.update}
+        />
+        <ClearPalette 
+        squares={this.props.squares}
+        update={this.props.update}
+        />
       </div>
     );
   }

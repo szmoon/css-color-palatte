@@ -5,13 +5,19 @@ import { render } from 'react-dom';
 export class ClearPalette extends Component {
   constructor(props) {
     super(props);  
+    this.clearPalette = this.clearPalette.bind(this);
+  }
+
+  clearPalette() {
+      this.props.update({squares: []});
   }
 
   render() {
     return (
       <div className="clear-palette">
-        <button>Clear Palette</button>
+        <button onClick={this.clearPalette}>Clear Palette</button>
       </div>
     );
   }
 }
+

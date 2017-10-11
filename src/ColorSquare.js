@@ -8,11 +8,11 @@ export class ColorSquare extends Component {
   }
 
   render() {
-    
+    let col = this.props.color[this.props.id];
 
     return (
-      <div className="color-square">
-        <div className="color-label">#color</div>
+      <div className="color-square" style={{backgroundColor: col}}>
+        <div className="color-label">{this.props.color[this.props.id]}</div>
       </div>
     );
   }

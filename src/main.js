@@ -16,19 +16,29 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      squares: [],
-      colorInput: "",
+      squares: ['#b7d1d1'],
     };
+    this.update = this.update.bind(this);
   }
  
+  update(obj) {
+    this.setState(obj);
+  }
+
   render() {
     return (
       <div id="app">
-        <Top />
+        <Top 
+        squares={this.state.squares}
+        update={this.update}
+        />
         <Middle 
         squares={this.state.squares}
         />
-        <Bottom />
+        <Bottom 
+        squares={this.state.squares}
+        update={this.update}
+        />
       </div>
       
     );
