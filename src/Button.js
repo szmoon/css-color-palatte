@@ -1,9 +1,9 @@
 console.log('main.js loaded!');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Top } from './Top';
-import { Middle } from './Middle';
-import { Bottom } from './Bottom';
+// import Top from './Top';
+// import Middle from './Middle';
+// import Bottom from './Bottom';
  
 // document.addEventListener('DOMContentLoaded', function() {
 //   ReactDOM.render(
@@ -16,21 +16,19 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      squares: [],
-      colorInput: "",
+      count: 0,
     };
   }
  
   render() {
     return (
-      <div id="app">
-        <Top />
-        <Middle 
-        squares={this.state.squares}
-        />
-        <Bottom />
-      </div>
-      
+      <button
+        onClick={() => {
+          this.setState({ count: this.state.count + 1 });
+        }}
+      >
+        Count: {this.state.count}
+      </button>
     );
   }
 }
