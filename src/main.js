@@ -4,13 +4,6 @@ import { render } from 'react-dom';
 import { Top } from './Top';
 import { Middle } from './Middle';
 import { Bottom } from './Bottom';
- 
-// document.addEventListener('DOMContentLoaded', function() {
-//   ReactDOM.render(
-//     React.createElement(App),
-//     document.getElementById('mount')
-//   );
-// });
 
 class App extends Component {
   constructor() {

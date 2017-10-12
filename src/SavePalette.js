@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
- 
+// const express = require('express');
+// const pg = require('pg');
+// const uri = 'postgres://toast:sits@localhost/csscolorpalette';
+
+
 export class SavePalette extends Component {
   constructor(props) {
     super(props);  
@@ -28,6 +32,14 @@ export class SavePalette extends Component {
       // SEND TO DATABASE HERE
       alert(paletteName + " is saved to the database! :)");
       this.props.update({squares: []});
+
+      // database connection 
+      
+
+     
+
+
+
     }
     this.state.value = '';
     event.preventDefault();
