@@ -10,16 +10,18 @@ export class OnePalette extends Component {
 
 
   loadPalette() {
-    console.log(id);
+    console.log(this.props.id);
+    console.log(this.props.squareArr);
+    this.props.update({squares: this.props.squareArr});
   }
 
   render() {
-    let savedArr = this.props.saved
+    let savedArr = this.props.saved;
   
     //mini swatch display
       let swatchDiv = [];
-      for (let y = 0; y < savedArr[x].square_arr.length; y++) {
-        let color = savedArr[x].square_arr[y];
+      for (let y = 0; y < this.props.squareArr.length; y++) {
+        let color = this.props.squareArr[y];
         swatchDiv.push(<div className="mini-swatch" style={{backgroundColor: color}}></div>);
       }
 
@@ -30,8 +32,8 @@ export class OnePalette extends Component {
     
 
     return (
-      <div className="saved-palette">
-        {savedArr[x].palette_name}
+      <div className="saved-palette" onClick={this.loadPalette}>
+        {this.props.name}
         <div className="color-swatches">
           {swatchDiv}
         </div>
