@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-// const express = require('express');
-// const pg = require('pg');
-// const uri = 'postgres://toast:sits@localhost/csscolorpalette';
+// import { server } from '../server.js';
 
 
 export class SavePalette extends Component {
@@ -12,6 +10,7 @@ export class SavePalette extends Component {
     // this.createSquare = this.createSquare.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.save = this.save.bind(this);
+    this.postData = this.postData.bind(this);
   }
 
   handleChange(event) {
@@ -29,20 +28,21 @@ export class SavePalette extends Component {
         squareArr: squareArr
       };
 
-      // SEND TO DATABASE HERE
+      this.postData(toSave);
+
       alert(paletteName + " is saved to the database! :)");
-      this.props.update({squares: []});
-
-      // database connection 
-      
-
-     
-
-
-
+      this.props.update({squares: []}); //clear board
     }
     this.state.value = '';
     event.preventDefault();
+  }
+
+  postData(obj) {
+    console.log("object to post " + obj);
+    fetch('/savepalette', {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(obj) });
   }
 
   render() {

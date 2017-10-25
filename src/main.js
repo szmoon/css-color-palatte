@@ -4,14 +4,30 @@ import { render } from 'react-dom';
 import { Top } from './Top';
 import { Middle } from './Middle';
 import { Bottom } from './Bottom';
+import { Sidebar } from './Sidebar';
+// const pg = require('pg');
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      squares: ['#b7d1d1'],
+      squares: [],
+      saved: []
     };
+    this.log = this.log.bind(this);
     this.update = this.update.bind(this);
+  }
+
+  // componentWillMount() {
+  //   fetch('/savedpalettes')
+  //     .then(response => response.json())
+  //     .then(data => this.setState({ saved: data }, this.log));
+  // }
+
+  
+  log() {
+    console.log("boop");
+    // console.log(this.state.saved);
   }
  
   update(obj) {
@@ -21,17 +37,28 @@ class App extends Component {
   render() {
     return (
       <div id="app">
-        <Top 
-        squares={this.state.squares}
-        update={this.update}
-        />
-        <Middle 
-        squares={this.state.squares}
-        />
-        <Bottom 
-        squares={this.state.squares}
-        update={this.update}
-        />
+        <h1>CSS Color Palette</h1>
+        <div id="main-box">
+          <Top 
+          squares={this.state.squares}
+          update={this.update}
+          />
+          <Middle 
+          squares={this.state.squares}
+          />
+          <Bottom 
+          squares={this.state.squares}
+          update={this.update}
+          />
+        </div>
+        <div id="sidebar">
+          <Sidebar 
+          squares={this.state.squares}
+          log={this.log}
+          saved={this.state.saved}
+          update={this.update}
+          />
+        </div>
       </div>
       
     );

@@ -9,13 +9,69 @@ h1 {
   color: #ffffff;
 }
 
+p {
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
 #app {
-  position: absolute;
+  position: relative;
+  width: 800px;
+  height: 670px;
+  left: 10%;
+  border: none;
+}
+
+#main-box {
+  float: left;
   width: 500px;
   height: 665px;
   padding: 10px;
   background-color: #ffffff;
   border: none;
+}
+
+#sidebar {
+  float: left;
+  width: 200px;
+  height: 685px;
+  margin-left: 20px;
+  /* padding: 3px; */
+  background-color: #e0e0e0;
+  border: none;
+}
+
+#sidebar-inside {
+  position: relative;
+  width: 190px;
+  height: 635px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.saved-palette {
+  width: 85%;
+  height: 40px;
+  margin: 10px;
+  padding: 5px;
+  background-color:#ffffff;;
+  color: #d1d1d1;
+}
+
+.color-swatches {
+  width: 100%;
+  margin-top:3px;
+  height: 15px;
+  /* background-color: blue; */
+}
+
+.mini-swatch {
+  float: left;
+  height: 100%;
+  width:10%;
+  /* opacity: 0.5; */
 }
 
 #top {

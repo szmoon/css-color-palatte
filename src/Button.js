@@ -1,4 +1,3 @@
-console.log('main.js loaded!');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 // import Top from './Top';

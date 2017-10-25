@@ -1,4 +1,3 @@
-console.log('bottom.js loaded!');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { SavePalette } from './SavePalette';
@@ -26,9 +25,9 @@ export class Bottom extends Component {
         squares={this.props.squares}
         update={this.props.update} 
         />
-        <SavedPalettes 
+        {/* <SavedPalettes 
         squares={this.props.squares}
-        update={this.props.update}/>
+        update={this.props.update}/> */}
       </div>
     );
   }

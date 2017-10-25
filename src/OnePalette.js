@@ -1,19 +1,13 @@
 console.log('colorinput.js loaded!');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { OnePalette } from './OnePalette';
  
-export class SavedPalettes extends Component {
+export class OnePalette extends Component {
   constructor(props) {
     super(props); 
     this.loadPalette = this.loadPalette.bind(this);
   }
 
-  componentWillMount() {
-    fetch('/savedpalettes')
-      .then(response => response.json())
-      .then(data => this.props.update({ saved: data }));
-  }
 
   loadPalette(id) {
     console.log(id);

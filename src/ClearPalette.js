@@ -1,4 +1,3 @@
-console.log('clearpalette.js loaded!');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
  
