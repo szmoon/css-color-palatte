@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { SavedPalettes } from './SavedPalettes';
+
  
 export class Sidebar extends Component {
   constructor(props) {

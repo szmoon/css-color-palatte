@@ -9,39 +9,33 @@ export class OnePalette extends Component {
   }
 
 
-  loadPalette(id) {
+  loadPalette() {
     console.log(id);
   }
 
   render() {
-    let swatchArr = [];
-    // console.log(this.props.saved);
-    for (let x = 0; x < this.props.saved.length; x++) {
-      // get colors in palette
+    let savedArr = this.props.saved
+  
+    //mini swatch display
       let swatchDiv = [];
-      for (let y = 0; y < this.props.saved[x].square_arr.length; y++) {
-        let color = this.props.saved[x].square_arr[y];
+      for (let y = 0; y < savedArr[x].square_arr.length; y++) {
+        let color = savedArr[x].square_arr[y];
         swatchDiv.push(<div className="mini-swatch" style={{backgroundColor: color}}></div>);
       }
-      // console.log(swatches);
 
-      console.log("push");
-      swatchArr.push(<div id={this.props.saved[x].palette_id} onClick={this.loadPalette} className="saved-palette">
-      {this.props.saved[x].palette_name}
-      <div className="color-swatches">
-      {swatchDiv}
-      </div>
-      </div>);
-    }
+      // displayArr.push(<div id={savedArr[x].palette_id} onClick={this.loadPalette} className="saved-palette">
+      
+      
+      // </div>);
+    
 
     return (
-      <div>
-      {swatchArr}
+      <div className="saved-palette">
+        {savedArr[x].palette_name}
+        <div className="color-swatches">
+          {swatchDiv}
+        </div>
       </div>
-      // <div className="saved-palette">
-      //   <div id="color-swatches">
-      //     </div>
-      // </div>
     );
   }
 }

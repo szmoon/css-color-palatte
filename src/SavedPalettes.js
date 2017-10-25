@@ -1,7 +1,7 @@
 console.log('colorinput.js loaded!');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { OnePalette } from './OnePalette';
+// import { OnePalette } from './OnePalette';
  
 export class SavedPalettes extends Component {
   constructor(props) {
@@ -20,20 +20,19 @@ export class SavedPalettes extends Component {
   }
 
   render() {
-    let swatchArr = [];
-    // console.log(this.props.saved);
-    for (let x = 0; x < this.props.saved.length; x++) {
-      // get colors in palette
+    let savedArr = this.props.saved
+    let displayArr = [];
+    
+    for (let x = 0; x < savedArr.length; x++) {
+      
       let swatchDiv = [];
-      for (let y = 0; y < this.props.saved[x].square_arr.length; y++) {
-        let color = this.props.saved[x].square_arr[y];
+      for (let y = 0; y < savedArr[x].square_arr.length; y++) {
+        let color = savedArr[x].square_arr[y];
         swatchDiv.push(<div className="mini-swatch" style={{backgroundColor: color}}></div>);
       }
-      // console.log(swatches);
 
-      console.log("push");
-      swatchArr.push(<div id={this.props.saved[x].palette_id} onClick={this.loadPalette} className="saved-palette">
-      {this.props.saved[x].palette_name}
+      displayArr.push(<div id={savedArr[x].palette_id} onClick={this.loadPalette} className="saved-palette">
+      {savedArr[x].palette_name}
       <div className="color-swatches">
       {swatchDiv}
       </div>
@@ -42,7 +41,7 @@ export class SavedPalettes extends Component {
 
     return (
       <div>
-      {swatchArr}
+      {displayArr}
       </div>
       // <div className="saved-palette">
       //   <div id="color-swatches">
