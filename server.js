@@ -10,7 +10,9 @@ const webpackConfig = require('./webpack.config.js');
 const compiler = webpack(webpackConfig);
 // database connection 
 const pg = require('pg');
+// const uri = 'postgres://vkapcjif:If24WjJ5e1LSvool6IKNVi1N1Vs03Qa5@elmer.db.elephantsql.com:5432/vkapcjif';
 const uri = 'postgres://toast:sits@localhost/csscolorpalette';
+
 
 
 // server connection
@@ -44,7 +46,8 @@ app.get('/savedpalettes', (req, res, next) => {
     // SQL Query > Select Data
     client.query('SELECT * FROM saved_palettes;', (err, result) => {
     if (err) throw new Error(err);
-    console.log(result.rows);
+    // console.log(result.rows);
+    console.log("get request");
     return res.json(result.rows);
     client.end();
   });

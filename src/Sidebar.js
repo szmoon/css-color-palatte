@@ -8,7 +8,7 @@ export class Sidebar extends Component {
     super(props);  
   }
 
-
+  
 
   render() {
     return (

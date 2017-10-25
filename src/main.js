@@ -1,11 +1,9 @@
-console.log('main.js loaded!');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Top } from './Top';
 import { Middle } from './Middle';
 import { Bottom } from './Bottom';
 import { Sidebar } from './Sidebar';
-// const pg = require('pg');
 
 class App extends Component {
   constructor() {
@@ -17,13 +15,6 @@ class App extends Component {
     this.log = this.log.bind(this);
     this.update = this.update.bind(this);
   }
-
-  // componentWillMount() {
-  //   fetch('/savedpalettes')
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ saved: data }, this.log));
-  // }
-
   
   log() {
     console.log("boop");

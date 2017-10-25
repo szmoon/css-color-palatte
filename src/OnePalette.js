@@ -1,4 +1,3 @@
-console.log('colorinput.js loaded!');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
  
@@ -24,11 +23,6 @@ export class OnePalette extends Component {
         let color = this.props.squareArr[y];
         swatchDiv.push(<div className="mini-swatch" style={{backgroundColor: color}}></div>);
       }
-
-      // displayArr.push(<div id={savedArr[x].palette_id} onClick={this.loadPalette} className="saved-palette">
-      
-      
-      // </div>);
     
 
     return (

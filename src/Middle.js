@@ -30,16 +30,3 @@ export class Middle extends Component {
     );
   }
 }
-
-
-// for (let x = 0; x < this.props.squares.length; x++) {
-//   let col = this.props.squares[x];
-//   colorSquareArr.push(
-//   <div className="color-square" style={{backgroundColor: col}}>
-//     <ColorSquare 
-//     id={x}
-//     color={this.props.squares}
-//     />
-//   </div>
-//   );
-// }

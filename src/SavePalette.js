@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-// import { server } from '../server.js';
 
 
 export class SavePalette extends Component {
@@ -32,6 +31,10 @@ export class SavePalette extends Component {
 
       alert(paletteName + " is saved to the database! :)");
       this.props.update({squares: []}); //clear board
+
+      let saved = this.props.saved;
+      saved.push(toSave);
+      this.props.update({saved: saved});
     }
     this.state.value = '';
     event.preventDefault();
@@ -49,7 +52,7 @@ export class SavePalette extends Component {
     return (
       <div className="color-input">
         <form onSubmit={this.save}>
-        <input type="text" value={this.state.value} onChange={this.handleChange} />
+        <input type="text" value={this.state.value} onChange={this.handleChange} maxlength="19"/>
           <input type="submit" value="Save Palette"/>
         </form>
       </div>

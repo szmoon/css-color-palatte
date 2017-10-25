@@ -27,6 +27,7 @@
     "pg-connect": "^2.0.2",
     "pg-promise": "^7.0.1",
     "react": "^16.0.0",
+    "react-color": "^2.13.8",
     "react-dom": "^16.0.0",
     "sequelize": "^4.13.8",
     "webpack": "^3.6.0",
