@@ -5,6 +5,9 @@ import { Middle } from './Middle';
 import { Bottom } from './Bottom';
 import { Sidebar } from './Sidebar';
 
+import { whyDidYouUpdate } from 'why-did-you-update';
+whyDidYouUpdate(React);
+
 class App extends Component {
   constructor() {
     super();
@@ -16,6 +19,14 @@ class App extends Component {
     this.update = this.update.bind(this);
   }
   
+  componentWillMount() {
+    window.performance.mark('App');
+  }
+
+  componentDidMount() {
+    console.log(window.performance.now('App'));
+  }
+
   log() {
     console.log("boop");
     // console.log(this.state.saved);
@@ -24,6 +35,11 @@ class App extends Component {
   update(obj) {
     this.setState(obj);
   }
+
+  componentDidUpdate() {
+    console.log("testing componenet did update");
+  }
+
 
   render() {
     return (
