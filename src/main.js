@@ -1,3 +1,6 @@
+import { reactopt } from 'reactopt';
+reactopt(React);
+
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Top } from './Top';
