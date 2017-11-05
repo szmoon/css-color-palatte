@@ -22,6 +22,7 @@ export class SavedPalettes extends Component {
      displayArr.push(
      <OnePalette 
      id={savedArr[x].palette_id} 
+     key={savedArr[x].palette_id} 
      name={savedArr[x].palette_name}
      squareArr={savedArr[x].square_arr}
      onClick={this.loadPalette} 

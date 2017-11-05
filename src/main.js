@@ -17,7 +17,7 @@ class App extends Component {
   }
   
   log() {
-    console.log("boop");
+    // console.log("boop");
     // console.log(this.state.saved);
   }
  

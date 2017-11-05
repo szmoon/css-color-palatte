@@ -1,4 +1,3 @@
-console.log('middle.js loaded!');
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { ColorSquare } from './ColorSquare';

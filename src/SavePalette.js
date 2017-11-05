@@ -41,7 +41,7 @@ export class SavePalette extends Component {
   }
 
   postData(obj) {
-    console.log("object to post " + obj);
+    // console.log("object to post " + obj);
     fetch('/savepalette', {
     method: "POST",
     headers: {'Content-Type': 'application/json'},
@@ -52,7 +52,7 @@ export class SavePalette extends Component {
     return (
       <div className="color-input">
         <form onSubmit={this.save}>
-        <input type="text" value={this.state.value} onChange={this.handleChange} maxlength="19"/>
+        <input type="text" value={this.state.value} onChange={this.handleChange} maxLength="19"/>
           <input type="submit" value="Save Palette"/>
         </form>
       </div>
